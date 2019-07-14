@@ -11,14 +11,17 @@ function contentequals(testfile, success, fail) {
         }
         if(file.isStream()) {
             this.emit('error', new PluginError(PLUGIN_NAME, 'Streams are not supported!'));
+            return callback(null, file);
         }
         fs.readFile(testfile, (err, data) => {
             if (err) throw err;
             else {
-                if(file.content.equals(data)) 
+                if(data.equals(file.contents)) {
                     if (success) success();
-                else
+                }
+                else{
                     if (fail) fail();
+                }
             }
             return callback(null, file);
         })
