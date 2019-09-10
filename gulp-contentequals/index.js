@@ -4,7 +4,7 @@ var fs = require("fs");
 var PluginError = require("plugin-error");
 const PLUGIN_NAME = "gulp-contentequals";
 
-function contentequals(testfile, success, fail) {
+function contentequals(testfile, success, fail, final) {
     var stream = function(file, encoding, callback) {
         if(file.isNull()) {
             return callback(null, file);
@@ -22,6 +22,7 @@ function contentequals(testfile, success, fail) {
                 else{
                     if (fail) fail();
                 }
+                if (final) final();
             }
             return callback(null, file);
         })
