@@ -9,6 +9,10 @@ Install via npm: `npm i gulp-contentequals`
   const gulp = require("gulp");
   const contentequals = require("gulp-contentequals");
 
+  function successCallBack() {...}
+  function failCallBack() {...}
+  function finalCallBack() {...}
+
   gulp.src("./FileToTest")
       .pipe(contentequals("./FileToCheckAgainst", 
         successCallback, 
