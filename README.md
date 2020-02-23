@@ -6,6 +6,7 @@ Install via npm: `npm i gulp-contentequals`
 
 ## Use:
 ```
+  const gulp = require("gulp");
   const contentequals = require("gulp-contentequals");
 
   gulp.src("./FileToTest")
