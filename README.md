@@ -4,8 +4,10 @@ Allows branching in gulp tasks based on comparisons of two files, useful for tes
 
 Available via npm: `npm i gulp-contentequals`
 
-## Syntax:
+## Use:
 ```
+  const contentequals = require("gulp-contentequals");
+
   gulp.src("./FileToTest")
       .pipe(contentequals("./FileToCheckAgainst", 
         successCallback, 
